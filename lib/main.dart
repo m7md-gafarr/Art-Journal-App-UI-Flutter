@@ -2,6 +2,7 @@ import 'package:art_journal/screen/Home.dart';
 import 'package:art_journal/screen/Login.dart';
 import 'package:art_journal/screen/OTPEmailSingUp.dart';
 import 'package:art_journal/screen/PassSingUP.dart';
+import 'package:art_journal/screen/Profile.dart';
 import 'package:art_journal/screen/SingUp.dart';
 import 'package:art_journal/screen/intro.dart';
 import 'package:device_preview/device_preview.dart';
@@ -29,6 +30,7 @@ class MAIN extends StatelessWidget {
         "PassSingUp": (context) => const PassWordSingUpPage(),
         "intro": (context) => introPage(),
         "home": (context) => HomePage(),
+        "profile": (context) => ProfileScreen(),
       },
       home: HomePage(),
     );

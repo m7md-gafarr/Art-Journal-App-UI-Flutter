@@ -3,7 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 import '../const.dart';
-import 'QuickSearch.dart';
+import '../Widget/QuickSearch.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({super.key});
@@ -39,13 +39,13 @@ class SearchWidget extends StatelessWidget {
                     width: 1.5,
                   ),
                   borderRadius: BorderRadius.all(
-                    Radius.circular(10),
+                    Radius.circular(15),
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: Dark,
-                    width: 1.5,
+                    width: .2,
                   ),
                   borderRadius: BorderRadius.all(
                     Radius.circular(15),

@@ -1,10 +1,12 @@
 import 'dart:ui';
 import 'package:art_journal/const.dart';
 import 'package:art_journal/Widget/GridImageHome.dart';
-import 'package:art_journal/Widget/SearchWidget.dart';
+import 'package:art_journal/screen/Profile.dart';
+import 'package:art_journal/screen/SearchWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import '../Widget/AddImage.dart';
+import 'Notification.dart';
+import 'AddImage.dart';
 import '../Widget/DividerDrawer.dart';
 import '../Widget/DrawerListTile.dart';
 
@@ -57,10 +59,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       });
                     },
                   ),
-                  Center(child: Text("Notifications...")),
+                  NotificationScreen(),
                   SearchWidget(),
                   AddImage(),
-                  Center(child: Text("User Account...")),
+                  ProfileScreen(),
                 ],
               ),
               if (MediaQuery.of(context).viewInsets.bottom == 0)
@@ -278,6 +280,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ],
         ),
       ),
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width,
       drawerEnableOpenDragGesture: true,
     );
   }

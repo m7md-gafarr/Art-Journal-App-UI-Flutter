@@ -19,7 +19,7 @@ class drawerlisttile extends StatelessWidget {
           color: Colors.white,
           fontFamily: "font",
           fontWeight: FontWeight.w500,
-          fontSize: 22,
+          fontSize: 21,
         ),
       ),
     );

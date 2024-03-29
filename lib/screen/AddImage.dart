@@ -3,9 +3,9 @@ import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import 'ButtonWidget.dart';
-import 'DropDownTextField.dart';
-import 'TextFeildAddImageWidget.dart';
+import '../Widget/ButtonWidget.dart';
+import '../Widget/DropDownTextField.dart';
+import '../Widget/TextFeildAddImageWidget.dart';
 
 class AddImage extends StatelessWidget {
   const AddImage({super.key});
