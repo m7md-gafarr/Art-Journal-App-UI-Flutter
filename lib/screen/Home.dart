@@ -196,7 +196,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           children: [
             UserAccountsDrawerHeader(
               accountName: Text(
-                "M7md Sokar",
+                "M2' Sokar",
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: "font",
@@ -216,14 +216,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 InkWell(
                   onTap: () {},
                   child: Icon(
-                    Iconsax.profile_2user4,
+                    Iconsax.more_circle,
                     color: Colors.white,
                     size: 27,
                   ),
                 )
               ],
-              decoration: BoxDecoration(color: Bright),
+              decoration: BoxDecoration(
+                color: Bright,
+              ),
               currentAccountPicture: CircleAvatar(
+                backgroundColor: Dark,
                 child: Text("M"),
               ),
               margin: EdgeInsets.all(10),

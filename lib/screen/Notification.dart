@@ -33,7 +33,7 @@ class NotificationScreen extends StatelessWidget {
             action: "followed you",
           ),
           NotificationWidget(
-            icon: Iconsax.heart5,
+            icon: Iconsax.gallery_favorite,
             color: Colors.redAccent,
             Username: "m7md_gafar",
             action: "like your post",
@@ -45,7 +45,7 @@ class NotificationScreen extends StatelessWidget {
             action: "followed you",
           ),
           NotificationWidget(
-            icon: Iconsax.heart5,
+            icon: Iconsax.gallery_favorite,
             color: Colors.redAccent,
             Username: "m7md_gafar",
             action: "like your post",
@@ -57,7 +57,7 @@ class NotificationScreen extends StatelessWidget {
             action: "followed you",
           ),
           NotificationWidget(
-            icon: Iconsax.heart5,
+            icon: Iconsax.gallery_favorite,
             color: Colors.redAccent,
             Username: "m7md_gafar",
             action: "like your post",
@@ -69,7 +69,7 @@ class NotificationScreen extends StatelessWidget {
             action: "followed you",
           ),
           NotificationWidget(
-            icon: Iconsax.heart5,
+            icon: Iconsax.gallery_favorite,
             color: Colors.redAccent,
             Username: "m7md_gafar",
             action: "like your post",
@@ -81,7 +81,7 @@ class NotificationScreen extends StatelessWidget {
             action: "followed you",
           ),
           NotificationWidget(
-            icon: Iconsax.heart5,
+            icon: Iconsax.gallery_favorite,
             color: Colors.redAccent,
             Username: "m7md_gafar",
             action: "like your post",

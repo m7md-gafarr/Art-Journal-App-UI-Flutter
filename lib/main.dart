@@ -12,7 +12,7 @@ void main() {
   // runApp(DevicePreview(
   //   builder: (context) => MAIN(),
   // ));
-  runApp(MAIN());
+  runApp(const MAIN());
 }
 
 class MAIN extends StatelessWidget {
@@ -30,9 +30,9 @@ class MAIN extends StatelessWidget {
         "PassSingUp": (context) => const PassWordSingUpPage(),
         "intro": (context) => introPage(),
         "home": (context) => HomePage(),
-        "profile": (context) => ProfileScreen(),
+        "profile": (context) => const ProfileScreen(),
       },
-      home: HomePage(),
+      initialRoute: "home",
     );
   }
 }
