@@ -1,7 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class drawerlisttile extends StatelessWidget {
-  drawerlisttile({super.key, required this.Label, required this.icon});
+  const drawerlisttile({super.key, required this.Label, required this.icon});
   final IconData? icon;
   final String Label;
 
@@ -13,14 +14,15 @@ class drawerlisttile extends StatelessWidget {
         color: Colors.white,
         size: 27,
       ),
-      title: Text(
+      title: AutoSizeText(
         Label,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.white,
           fontFamily: "font",
           fontWeight: FontWeight.w500,
           fontSize: 21,
         ),
+        maxLines: 1,
       ),
     );
   }

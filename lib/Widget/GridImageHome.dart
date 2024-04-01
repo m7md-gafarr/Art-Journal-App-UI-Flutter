@@ -11,24 +11,24 @@ class GridImageHome extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 4.0, left: 4, right: 4),
       child: GridView.custom(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         gridDelegate: SliverQuiltedGridDelegate(
           crossAxisCount: 4,
           mainAxisSpacing: 4,
           crossAxisSpacing: 4,
           repeatPattern: QuiltedGridRepeatPattern.inverted,
           pattern: [
-            QuiltedGridTile(2, 2),
-            QuiltedGridTile(1, 1),
-            QuiltedGridTile(1, 1),
-            QuiltedGridTile(1, 2),
+            const QuiltedGridTile(2, 2),
+            const QuiltedGridTile(1, 1),
+            const QuiltedGridTile(1, 1),
+            const QuiltedGridTile(1, 2),
           ],
         ),
         childrenDelegate: SliverChildBuilderDelegate(
           (context, index) => InkWell(
             onLongPress: onLongPress,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(
                   Radius.circular(5),
                 ),

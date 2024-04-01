@@ -1,30 +1,24 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../const.dart';
 import '../Widget/ButtonWidget.dart';
 import '../Widget/TextFeildSingInAndUpWidget.dart';
+import '../const.dart';
 
-class PassWordSingUpPage extends StatefulWidget {
-  const PassWordSingUpPage({super.key});
+class ResetPassword extends StatefulWidget {
+  const ResetPassword({super.key});
 
   @override
-  State<PassWordSingUpPage> createState() => _PassWordSingUpPageState();
+  State<ResetPassword> createState() => _ResetPasswordState();
 }
 
-class _PassWordSingUpPageState extends State<PassWordSingUpPage> {
-  bool obscureText = false;
-
-  _tolag() {
-    setState(() {
-      obscureText = !obscureText;
-    });
-  }
-
+class _ResetPasswordState extends State<ResetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -61,8 +55,9 @@ class _PassWordSingUpPageState extends State<PassWordSingUpPage> {
                 padding: const EdgeInsets.only(left: 25.0),
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    "Create New Password.",
+                  child: AutoSizeText(
+                    "Reset your Password...",
+                    maxLines: 1,
                     style: TextStyle(
                       color: Dark_50,
                       fontFamily: "font1",
@@ -73,32 +68,23 @@ class _PassWordSingUpPageState extends State<PassWordSingUpPage> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 25,
               ),
 
               // Text Feild for user name or email
               TextFeildSingInAndUpWidget(
-                icon: Icon(Iconsax.password_check, color: Bright),
-                Label: "PASSWORD",
-                obscureText: obscureText,
+                icon: Icon(Iconsax.direct_right, color: Bright),
+                Label: "E-MAIL",
+                obscureText: false,
               ),
               const SizedBox(
                 height: 30,
               ),
-              TextFeildSingInAndUpWidget(
-                icon: Icon(Iconsax.password_check, color: Bright),
-                Label: "CONFIRM PASSWORD",
-                obscureText: obscureText,
-              ),
-
-              const SizedBox(
-                height: 40,
-              ),
 
               ButtonWidget(
-                label: "Create New Password",
+                label: "Send Code",
                 onPressed: () {
-                  Navigator.pushNamed(context, "login");
+                  Navigator.pushNamed(context, "OTPSingUp");
                 },
               ),
             ],

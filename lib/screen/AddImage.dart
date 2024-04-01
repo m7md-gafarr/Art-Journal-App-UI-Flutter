@@ -14,7 +14,7 @@ class AddImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             Padding(
@@ -25,7 +25,7 @@ class AddImage extends StatelessWidget {
                 height: 200,
                 decoration: BoxDecoration(
                     color: Dark_50.withOpacity(.3),
-                    borderRadius: BorderRadius.all(Radius.circular(8))),
+                    borderRadius: const BorderRadius.all(Radius.circular(8))),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -34,14 +34,15 @@ class AddImage extends StatelessWidget {
                       width: 60,
                       decoration: BoxDecoration(
                         color: Bright,
-                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(50)),
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Iconsax.image4,
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
@@ -60,41 +61,41 @@ class AddImage extends StatelessWidget {
               labelText: "Title",
               maxLines: 1,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             DropDownTextFieldWidget(
               labelText: "Medium",
               hintText: "Select Medium",
-              dropDownList: [
+              dropDownList: const [
                 DropDownValueModel(name: "Medium1", value: "Medium1"),
                 DropDownValueModel(name: "Medium2", value: "Medium2"),
                 DropDownValueModel(name: "Medium3", value: "Medium3"),
                 DropDownValueModel(name: "Medium4", value: "Medium4"),
               ],
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             DropDownTextFieldWidget(
               labelText: "Tags",
               hintText: "Select tags",
-              dropDownList: [
+              dropDownList: const [
                 DropDownValueModel(name: "Tag1", value: "Tag1"),
                 DropDownValueModel(name: "Tag2", value: "Tag2"),
                 DropDownValueModel(name: "Tag3", value: "Tag3"),
                 DropDownValueModel(name: "Tag4", value: "Tag4"),
               ],
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             TextFeildAddImageWidget(
               labelText: "Description",
               maxLines: 6,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             if (MediaQuery.of(Scaffold.of(context).context).viewInsets.bottom !=
                 0)
               ButtonWidget(
                 label: "Upload",
                 onPressed: () {},
               ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
           ],
         ),
       ),

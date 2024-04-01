@@ -2,7 +2,7 @@ import 'package:art_journal/const.dart';
 import 'package:flutter/material.dart';
 
 class QuickSearchWidget extends StatelessWidget {
-  QuickSearchWidget({super.key, required this.Label});
+  const QuickSearchWidget({super.key, required this.Label});
   final String Label;
   @override
   Widget build(BuildContext context) {
@@ -10,7 +10,7 @@ class QuickSearchWidget extends StatelessWidget {
       padding: const EdgeInsets.all(2.0),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(30),
           ),
           color: Dark_50.withOpacity(.3),

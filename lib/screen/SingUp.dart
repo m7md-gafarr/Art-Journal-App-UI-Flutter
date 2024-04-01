@@ -6,28 +6,70 @@ import '../Widget/ButtonWidget.dart';
 import '../Widget/SocialWidget.dart';
 import '../Widget/TextFeildSingInAndUpWidget.dart';
 
-class SingUpPage extends StatelessWidget {
+class SingUpPage extends StatefulWidget {
   const SingUpPage({super.key});
+
+  @override
+  State<SingUpPage> createState() => _SingUpPageState();
+}
+
+class _SingUpPageState extends State<SingUpPage> {
+  late bool _obscureText;
+  late bool _obscureText1;
+
+  @override
+  void initState() {
+    _obscureText = false;
+    _obscureText1 = false;
+    super.initState();
+  }
+
+  _tolag() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
+  _tolag1() {
+    setState(() {
+      _obscureText1 = !_obscureText1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Align(
+          alignment: Alignment.centerLeft,
+          child: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Iconsax.back_square, color: Dark),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 130),
+              SizedBox(height: MediaQuery.of(context).size.width / 2 - 170),
               // App logo
-              Image(
+              const Image(
                 image: AssetImage(
                   "assets/Logos/Logo.png",
                 ),
                 height: 64,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
               Padding(
@@ -35,7 +77,7 @@ class SingUpPage extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "SING UP...",
+                    "SING UP....",
                     style: TextStyle(
                       color: Dark_50,
                       fontFamily: "font1",
@@ -45,17 +87,50 @@ class SingUpPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 40,
+              const SizedBox(
+                height: 25,
               ),
 
               // Text Feild for user name or email
               TextFeildSingInAndUpWidget(
                 icon: Icon(Iconsax.direct_right, color: Bright),
                 Label: "E-MAIL",
+                obscureText: _obscureText,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              TextFeildSingInAndUpWidget(
+                icon: Icon(Iconsax.direct_right, color: Bright),
+                Label: "PASSWORD",
+                obscureText: _obscureText,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    _tolag();
+                  },
+                  icon: _obscureText
+                      ? Icon(Iconsax.eye, color: Dark)
+                      : Icon(Iconsax.eye_slash, color: Dark_50),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              TextFeildSingInAndUpWidget(
+                icon: Icon(Iconsax.direct_right, color: Bright),
+                Label: "CONFORM PASSWORD",
+                obscureText: _obscureText,
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    _tolag1();
+                  },
+                  icon: _obscureText1
+                      ? Icon(Iconsax.eye, color: Dark)
+                      : Icon(Iconsax.eye_slash, color: Dark_50),
+                ),
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
 
@@ -63,12 +138,12 @@ class SingUpPage extends StatelessWidget {
                 label: "Continue",
                 onPressed: () => Navigator.pushNamed(context, "OTPSingUp"),
               ),
-              SizedBox(
-                height: 30,
+              const SizedBox(
+                height: 20,
               ),
-              SocialWidget(),
-              SizedBox(
-                height: 40,
+              const SocialWidget(),
+              const SizedBox(
+                height: 7,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -79,12 +154,18 @@ class SingUpPage extends StatelessWidget {
                         fontFamily: "font", color: Dark, fontSize: 16),
                   ),
                   TextButton(
+                    style: ButtonStyle(
+                      overlayColor:
+                          MaterialStatePropertyAll(Dark_50.withOpacity(.2)),
+                    ),
                     onPressed: () {
                       Navigator.pushNamed(context, "login");
                     },
-                    child: Text("Sing in",
-                        style: TextStyle(
-                            color: Bright, fontFamily: "font", fontSize: 16)),
+                    child: Text(
+                      "Sing in",
+                      style: TextStyle(
+                          color: Bright, fontFamily: "font", fontSize: 16),
+                    ),
                   )
                 ],
               )

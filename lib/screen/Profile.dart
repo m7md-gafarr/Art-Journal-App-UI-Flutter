@@ -10,12 +10,13 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         clipBehavior: Clip.none,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverAppBar(
             actions: [
               IconButton(
-                  onPressed: () {}, icon: Icon(Iconsax.more_circle_outline))
+                  onPressed: () {},
+                  icon: const Icon(Iconsax.more_circle_outline))
             ],
             clipBehavior: Clip.none,
             pinned: true,
@@ -39,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
                     height: 80,
                     width: 80,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(50),
                         ),
                         color: Dark),

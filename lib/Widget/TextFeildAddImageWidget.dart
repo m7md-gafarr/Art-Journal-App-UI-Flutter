@@ -2,7 +2,7 @@ import 'package:art_journal/const.dart';
 import 'package:flutter/material.dart';
 
 class TextFeildAddImageWidget extends StatelessWidget {
-  TextFeildAddImageWidget(
+  const TextFeildAddImageWidget(
       {super.key, required this.labelText, required this.maxLines});
   final String labelText;
   final int maxLines;
@@ -26,7 +26,7 @@ class TextFeildAddImageWidget extends StatelessWidget {
               color: Dark,
               width: 1.5,
             ),
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
           ),
@@ -35,7 +35,7 @@ class TextFeildAddImageWidget extends StatelessWidget {
               color: Dark,
               width: 1.5,
             ),
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
           ),

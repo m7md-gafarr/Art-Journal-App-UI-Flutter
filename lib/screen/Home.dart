@@ -11,7 +11,7 @@ import '../Widget/DividerDrawer.dart';
 import '../Widget/DrawerListTile.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -22,9 +22,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   TabController? _tabController;
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
+  @override
   void initState() {
     _tabController = TabController(
-      animationDuration: Duration(milliseconds: 300),
+      animationDuration: const Duration(milliseconds: 300),
       length: 5,
       vsync: this,
     );
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           child: Stack(
             children: [
               TabBarView(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 controller: _tabController,
                 children: [
                   GridImageHome(
@@ -59,10 +60,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       });
                     },
                   ),
-                  NotificationScreen(),
-                  SearchWidget(),
-                  AddImage(),
-                  ProfileScreen(),
+                  const NotificationScreen(),
+                  const SearchWidget(),
+                  const AddImage(),
+                  const ProfileScreen(),
                 ],
               ),
               if (MediaQuery.of(context).viewInsets.bottom == 0)
@@ -75,7 +76,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       color: Bright,
-                      borderRadius: BorderRadius.all(
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(30),
                       ),
                     ),
@@ -83,9 +84,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       onTap: (value) {},
                       indicatorSize: TabBarIndicatorSize.label,
                       indicatorColor: Colors.white,
-                      indicatorPadding: EdgeInsets.only(bottom: 10),
+                      indicatorPadding: const EdgeInsets.only(bottom: 10),
                       controller: _tabController,
-                      tabs: [
+                      tabs: const [
                         Tab(child: Icon(Iconsax.home, size: 25)),
                         Tab(child: Icon(Iconsax.notification4, size: 25)),
                         Tab(child: Icon(Iconsax.search_normal, size: 25)),
@@ -134,8 +135,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 width: 50,
                                 decoration: BoxDecoration(
                                     color: Colors.white.withOpacity(.5),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(50))),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(50))),
                                 child: Icon(
                                   Iconsax.close_circle,
                                   color: Bright,
@@ -156,12 +157,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             width: 180,
                             decoration: BoxDecoration(
                                 color: Colors.white.withOpacity(.5),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(50))),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(50))),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
+                                const Text(
                                   " SEE DETAILS",
                                   style: TextStyle(
                                     fontSize: 16,
@@ -170,7 +171,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 15,
                                 ),
                                 Icon(
@@ -195,7 +196,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text(
+              accountName: const Text(
                 "M2' Sokar",
                 style: TextStyle(
                   color: Colors.white,
@@ -204,7 +205,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              accountEmail: Text(
+              accountEmail: const Text(
                 "@m7md_gafar",
                 style: TextStyle(
                   color: Colors.white70,
@@ -215,7 +216,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               otherAccountsPictures: [
                 InkWell(
                   onTap: () {},
-                  child: Icon(
+                  child: const Icon(
                     Iconsax.more_circle,
                     color: Colors.white,
                     size: 27,
@@ -227,12 +228,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Dark,
-                child: Text("M"),
+                child: const Text("M"),
               ),
-              margin: EdgeInsets.all(10),
-              currentAccountPictureSize: Size(60, 60),
+              margin: const EdgeInsets.all(10),
+              currentAccountPictureSize: const Size(60, 60),
             ),
-            Row(
+            const Row(
               children: [
                 SizedBox(width: 25),
                 Text(
@@ -270,15 +271,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ),
               ],
             ),
-            DividerDrawer(),
-            drawerlisttile(Label: "Profile", icon: Iconsax.profile_circle4),
-            drawerlisttile(Label: "Bookmarks", icon: Iconsax.save_2),
-            drawerlisttile(
+            const DividerDrawer(),
+            const drawerlisttile(
+                Label: "Profile", icon: Iconsax.profile_circle4),
+            const drawerlisttile(Label: "Bookmarks", icon: Iconsax.save_2),
+            const drawerlisttile(
                 Label: "Follower requests", icon: Iconsax.profile_add4),
-            DividerDrawer(),
-            drawerlisttile(Label: "Settings", icon: Iconsax.setting4),
-            drawerlisttile(Label: "Privacy", icon: Iconsax.security_user4),
-            drawerlisttile(
+            const DividerDrawer(),
+            const drawerlisttile(Label: "Settings", icon: Iconsax.setting4),
+            const drawerlisttile(
+                Label: "Privacy", icon: Iconsax.security_user4),
+            const drawerlisttile(
                 Label: "Help Center", icon: Iconsax.message_question4),
           ],
         ),

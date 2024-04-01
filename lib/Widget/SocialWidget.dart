@@ -19,7 +19,7 @@ class SocialWidget extends StatelessWidget {
                 height: 30,
               ),
             ),
-            Text(
+            const Text(
               "   OR   ",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
@@ -33,8 +33,8 @@ class SocialWidget extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
-          height: 30,
+        const SizedBox(
+          height: 15,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +45,7 @@ class SocialWidget extends StatelessWidget {
                 height: 35,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 25,
             ),
             InkWell(
@@ -54,7 +54,7 @@ class SocialWidget extends StatelessWidget {
                 height: 35,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 25,
             ),
             InkWell(

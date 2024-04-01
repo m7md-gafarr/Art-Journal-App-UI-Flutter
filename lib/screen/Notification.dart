@@ -24,8 +24,8 @@ class NotificationScreen extends StatelessWidget {
         ),
       ),
       body: ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
+        physics: const BouncingScrollPhysics(),
+        children: const [
           NotificationWidget(
             icon: Iconsax.user_add,
             color: Colors.blueAccent,

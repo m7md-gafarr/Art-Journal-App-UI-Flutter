@@ -11,7 +11,6 @@ class ButtonWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: ElevatedButton(
         onPressed: onPressed,
-        child: Text(label),
         style: ElevatedButton.styleFrom(
           textStyle: TextStyle(
             fontSize: 19,
@@ -22,8 +21,9 @@ class ButtonWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(50),
           ),
           backgroundColor: Bright,
-          fixedSize: Size(double.maxFinite, 45),
+          fixedSize: const Size(double.maxFinite, 45),
         ),
+        child: Text(label),
       ),
     );
   }

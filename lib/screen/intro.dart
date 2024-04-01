@@ -1,11 +1,13 @@
 import 'package:art_journal/const.dart';
 import 'package:art_journal/model/intro.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class introPage extends StatefulWidget {
-  introPage({super.key});
+  const introPage({super.key});
 
   @override
   State<introPage> createState() => _introPageState();
@@ -13,21 +15,21 @@ class introPage extends StatefulWidget {
 
 class _introPageState extends State<introPage> {
   List<introModel> Listpage = [
-    introModel(
+    const introModel(
       Label: "Art Journal 1",
-      Imagepath: "assets/images/intro/intro1.jpg",
+      Imagepath: "assets/images/intro/intro1.svg",
       SubLabel:
           "Note that in the below code I'am blurring the whole screen except for the image. You can change the size of the blurred part by setting the container's size.",
     ),
-    introModel(
+    const introModel(
       Label: "Art Journal 2",
-      Imagepath: "assets/images/intro/intro1.jpg",
+      Imagepath: "assets/images/intro/intro2.svg",
       SubLabel:
           "Note that in the below code I'am blurring the whole screen except for the image. You can change the size of the blurred part by setting the container's size.",
     ),
-    introModel(
+    const introModel(
       Label: "Art Journal 3",
-      Imagepath: "assets/images/intro/intro1.jpg",
+      Imagepath: "assets/images/intro/intro3.svg",
       SubLabel:
           "Note that in the below code I'am blurring the whole screen except for the image. You can change the size of the blurred part by setting the container's size.",
     ),
@@ -53,7 +55,7 @@ class _introPageState extends State<introPage> {
               });
             },
             controller: _controller,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             itemCount: Listpage.length,
             itemBuilder: (context, index) =>
                 ContainerintroWidget(iModel: Listpage[index]),
@@ -67,15 +69,16 @@ class _introPageState extends State<introPage> {
                         backgroundColor: Bright,
                         fixedSize:
                             Size(MediaQuery.of(context).size.width / 3, 50),
-                        shape: RoundedRectangleBorder(
+                        shape: const RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(50)))),
                     onPressed: () {
                       Navigator.pushNamed(context, "login");
                     },
-                    child: Text(
+                    child: const AutoSizeText(
                       "GET START",
                       style: TextStyle(fontFamily: "font", fontSize: 17),
+                      maxLines: 1,
                     ),
                   ),
                 )
@@ -91,7 +94,7 @@ class _introPageState extends State<introPage> {
                           SmoothPageIndicator(
                             onDotClicked: (index) => _controller.animateToPage(
                               index,
-                              duration: Duration(milliseconds: 300),
+                              duration: const Duration(milliseconds: 300),
                               curve: Curves.easeOut,
                             ),
                             controller: _controller,
@@ -103,7 +106,7 @@ class _introPageState extends State<introPage> {
                               dotColor: Dark_50,
                             ),
                           ),
-                          Text(
+                          const Text(
                             "SCROLL RIGHT",
                             style: TextStyle(
                               fontFamily: "font",
@@ -113,7 +116,7 @@ class _introPageState extends State<introPage> {
                           IconButton(
                             onPressed: () {
                               _controller.nextPage(
-                                  duration: Duration(milliseconds: 300),
+                                  duration: const Duration(milliseconds: 300),
                                   curve: Curves.easeOut);
                             },
                             icon: Icon(
@@ -128,14 +131,14 @@ class _introPageState extends State<introPage> {
                   ),
                 ),
           _lastpage
-              ? Text("")
+              ? const Text("")
               : Positioned(
                   top: 40,
                   right: 0,
                   child: TextButton(
                     onPressed: () {
                       _controller.animateToPage(2,
-                          duration: Duration(milliseconds: 300),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.easeOut);
                     },
                     child: Text(
@@ -155,7 +158,7 @@ class _introPageState extends State<introPage> {
 }
 
 class ContainerintroWidget extends StatelessWidget {
-  ContainerintroWidget({super.key, required this.iModel});
+  const ContainerintroWidget({super.key, required this.iModel});
   final introModel iModel;
   @override
   Widget build(BuildContext context) {
@@ -164,9 +167,9 @@ class ContainerintroWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
+          SvgPicture.asset(
             iModel.Imagepath,
-            height: 333,
+            height: MediaQuery.of(context).size.width - 70,
           ),
           Text(
             iModel.Label,
@@ -176,9 +179,7 @@ class ContainerintroWidget extends StatelessWidget {
               fontSize: 33,
             ),
           ),
-          SizedBox(
-            height: 15,
-          ),
+          const SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Text(

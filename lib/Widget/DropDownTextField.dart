@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../const.dart';
 
 class DropDownTextFieldWidget extends StatelessWidget {
-  DropDownTextFieldWidget(
+  const DropDownTextFieldWidget(
       {super.key,
       required this.dropDownList,
       required this.hintText,
@@ -31,7 +31,7 @@ class DropDownTextFieldWidget extends StatelessWidget {
               color: Dark,
               width: 1.5,
             ),
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
           ),
@@ -40,7 +40,7 @@ class DropDownTextFieldWidget extends StatelessWidget {
               color: Dark,
               width: 1.5,
             ),
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(10),
             ),
           ),

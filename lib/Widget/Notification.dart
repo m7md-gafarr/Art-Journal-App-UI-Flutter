@@ -17,7 +17,7 @@ class NotificationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        contentPadding: EdgeInsets.all(8),
+        contentPadding: const EdgeInsets.all(8),
         leading: Stack(
           clipBehavior: Clip.none,
           children: [
@@ -28,11 +28,11 @@ class NotificationWidget extends StatelessWidget {
               bottom: -8,
               right: -8,
               child: Container(
-                padding: EdgeInsets.all(4),
+                padding: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.white, width: 1.5),
                     color: color,
-                    borderRadius: BorderRadius.all(Radius.circular(30))),
+                    borderRadius: const BorderRadius.all(Radius.circular(30))),
                 child: Icon(
                   icon,
                   color: Colors.white,
@@ -44,12 +44,12 @@ class NotificationWidget extends StatelessWidget {
         ),
         title: Row(
           children: [
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             SizedBox(
               width: MediaQuery.of(context).size.width - 155,
               child: AutoSizeText(
-                "${Username} ${action}.",
-                style: TextStyle(
+                "$Username $action.",
+                style: const TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.w500,
                 ),
@@ -61,49 +61,49 @@ class NotificationWidget extends StatelessWidget {
         trailing: IconButton(
           onPressed: () {
             showModalBottomSheet(
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
                 ),
               ),
               context: context,
-              builder: (context) => Container(
+              builder: (context) => SizedBox(
                 height: 250,
                 child: Column(
                   children: [
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Container(
                       height: 4,
                       width: 70,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(6),
                         ),
                         color: Dark_50,
                       ),
                     ),
-                    Spacer(flex: 1),
+                    const Spacer(flex: 1),
                     CircleAvatar(
                       maxRadius: 30,
                       backgroundColor: Dark,
                     ),
-                    Spacer(flex: 1),
-                    Text("data"),
-                    Spacer(flex: 1),
+                    const Spacer(flex: 1),
+                    const Text("data"),
+                    const Spacer(flex: 1),
                     menubottom(Iconsax.trash, "Remove this notification"),
-                    Spacer(flex: 1),
+                    const Spacer(flex: 1),
                     menubottom(Iconsax.slash, "Turn off these notification"),
-                    Spacer(flex: 1),
+                    const Spacer(flex: 1),
                     menubottom(Iconsax.message_question4,
                         "Report issue to Notifications Team"),
-                    Spacer(flex: 2),
+                    const Spacer(flex: 2),
                   ],
                 ),
               ),
             );
           },
-          icon: Icon(Iconsax.more),
+          icon: const Icon(Iconsax.more),
         ),
       ),
     );
@@ -112,21 +112,21 @@ class NotificationWidget extends StatelessWidget {
   Widget menubottom(IconData icon, String text) {
     return Row(
       children: [
-        SizedBox(width: 20),
+        const SizedBox(width: 20),
         Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(
+            borderRadius: const BorderRadius.all(
               Radius.circular(30),
             ),
             color: Dark_50.withOpacity(.5),
           ),
-          padding: EdgeInsets.all(7),
+          padding: const EdgeInsets.all(7),
           child: Icon(icon, size: 27, color: Dark),
         ),
-        SizedBox(width: 15),
+        const SizedBox(width: 15),
         AutoSizeText(
-          "$text",
-          style: TextStyle(
+          text,
+          style: const TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.w500,
           ),
