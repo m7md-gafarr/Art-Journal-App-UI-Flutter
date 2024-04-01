@@ -1,8 +1,10 @@
 import 'dart:ui';
+import 'package:art_journal/Widget/ButtonWidget.dart';
 import 'package:art_journal/const.dart';
 import 'package:art_journal/Widget/GridImageHome.dart';
 import 'package:art_journal/screen/Profile.dart';
 import 'package:art_journal/screen/SearchWidget.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'Notification.dart';
@@ -193,101 +195,227 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       drawer: Drawer(
         width: MediaQuery.of(context).size.width - 100,
         backgroundColor: Bright,
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              accountName: const Text(
-                "M2' Sokar",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: "font",
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              accountEmail: const Text(
-                "@m7md_gafar",
-                style: TextStyle(
-                  color: Colors.white70,
-                  fontFamily: "font",
-                  fontSize: 15,
-                ),
-              ),
-              otherAccountsPictures: [
-                InkWell(
-                  onTap: () {},
-                  child: const Icon(
-                    Iconsax.more_circle,
-                    color: Colors.white,
-                    size: 27,
-                  ),
-                )
-              ],
-              decoration: BoxDecoration(
-                color: Bright,
-              ),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Dark,
-                child: const Text("M"),
-              ),
-              margin: const EdgeInsets.all(10),
-              currentAccountPictureSize: const Size(60, 60),
-            ),
-            const Row(
-              children: [
-                SizedBox(width: 25),
-                Text(
-                  "1020",
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                accountName: const Text(
+                  "M2' Sokar",
                   style: TextStyle(
-                    color: Colors.white70,
+                    color: Colors.white,
                     fontFamily: "font",
+                    fontSize: 20,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(width: 5),
-                Text(
-                  "Follower",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: "font",
-                  ),
-                ),
-                SizedBox(width: 10),
-                Text(
-                  "3750",
+                accountEmail: const Text(
+                  "@m7md_gafar",
                   style: TextStyle(
                     color: Colors.white70,
                     fontFamily: "font",
-                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
                   ),
                 ),
-                SizedBox(width: 5),
-                Text(
-                  "Followers",
+                otherAccountsPictures: [
+                  InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30),
+                        )),
+                        context: context,
+                        builder: (context) => Container(
+                          height: MediaQuery.of(context).size.width - 170,
+                          decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30),
+                            topRight: Radius.circular(30),
+                          )),
+                          child: Column(
+                            children: [
+                              const SizedBox(height: 5),
+                              Container(
+                                height: 4,
+                                width: 70,
+                                decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(6),
+                                  ),
+                                  color: Dark_50,
+                                ),
+                              ),
+                              const SizedBox(height: 5),
+                              const Align(
+                                alignment: Alignment.centerLeft,
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: 30.0),
+                                  child: Text(
+                                    "Accounts",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 21,
+                                        fontFamily: "font"),
+                                  ),
+                                ),
+                              ),
+                              const Spacer(flex: 1),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 12.0),
+                                child: ListTile(
+                                  leading: CircleAvatar(
+                                    backgroundColor: Dark,
+                                  ),
+                                  title: const Text("M2' Sokar"),
+                                  subtitle: const Text("m7md_gafar"),
+                                  trailing: const Icon(Iconsax.tick_circle,
+                                      color: Colors.green),
+                                ),
+                              ),
+                              const Spacer(flex: 1),
+                              ButtonWidget(
+                                label: "Create a new account",
+                                onPressed: () {},
+                              ),
+                              const Spacer(flex: 1),
+                              ButtonWidget(
+                                label: "Add an existing account",
+                                onPressed: () {},
+                              ),
+                              const Spacer(flex: 1),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                    child: const Icon(
+                      Iconsax.more_circle,
+                      color: Colors.white,
+                      size: 27,
+                    ),
+                  )
+                ],
+                decoration: BoxDecoration(
+                  color: Bright,
+                ),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Dark,
+                  child: const Text("M"),
+                ),
+                margin: const EdgeInsets.all(10),
+                currentAccountPictureSize: const Size(60, 60),
+              ),
+              const Row(
+                children: [
+                  SizedBox(width: 25),
+                  Text(
+                    "1020",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontFamily: "font",
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    "Follower",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: "font",
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    "3750",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontFamily: "font",
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  Text(
+                    "Followers",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: "font",
+                    ),
+                  ),
+                ],
+              ),
+              const DividerDrawer(),
+              const drawerlisttile(
+                  Label: "Profile", icon: Iconsax.profile_circle4),
+              const drawerlisttile(Label: "Bookmarks", icon: Iconsax.save_2),
+              const drawerlisttile(Label: "Messages", icon: Iconsax.message),
+              const drawerlisttile(
+                  Label: "Communities", icon: Iconsax.profile_2user),
+              const drawerlisttile(
+                  Label: "Follower requests", icon: Iconsax.profile_add4),
+              const DividerDrawer(),
+              ExpansionTile(
+                title: const AutoSizeText(
+                  "Professional Tools",
                   style: TextStyle(
                     color: Colors.white,
-                    fontFamily: "font",
+                    fontFamily: "Settings & Support",
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
                   ),
+                  maxLines: 1,
                 ),
-              ],
-            ),
-            const DividerDrawer(),
-            const drawerlisttile(
-                Label: "Profile", icon: Iconsax.profile_circle4),
-            const drawerlisttile(Label: "Bookmarks", icon: Iconsax.save_2),
-            const drawerlisttile(
-                Label: "Follower requests", icon: Iconsax.profile_add4),
-            const DividerDrawer(),
-            const drawerlisttile(Label: "Settings", icon: Iconsax.setting4),
-            const drawerlisttile(
-                Label: "Privacy", icon: Iconsax.security_user4),
-            const drawerlisttile(
-                Label: "Help Center", icon: Iconsax.message_question4),
-          ],
+                children: [
+                  ExpandableTile(Iconsax.link_square, "Ads"),
+                ],
+              ),
+              ExpansionTile(
+                title: const AutoSizeText(
+                  "Settings & Support",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: "Settings & Support",
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
+                  ),
+                  maxLines: 1,
+                ),
+                children: [
+                  ExpandableTile(Iconsax.setting4, "Settings"),
+                  ExpandableTile(Iconsax.security_user4, "Privacy"),
+                  ExpandableTile(Iconsax.message_question4, "Help Center"),
+                ],
+              ),
+              const DividerDrawer(),
+              const drawerlisttile(Label: "Log out", icon: Iconsax.logout),
+            ],
+          ),
         ),
       ),
       drawerEdgeDragWidth: MediaQuery.of(context).size.width,
       drawerEnableOpenDragGesture: true,
+    );
+  }
+
+  Widget ExpandableTile(IconData icon, String Label) {
+    return ListTile(
+      leading: Icon(
+        icon,
+        color: Colors.white,
+        size: 23,
+      ),
+      title: AutoSizeText(
+        Label,
+        style: const TextStyle(
+          color: Colors.white,
+          fontFamily: "font",
+          fontWeight: FontWeight.w500,
+          fontSize: 18,
+        ),
+        maxLines: 1,
+      ),
     );
   }
 }

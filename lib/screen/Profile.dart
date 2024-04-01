@@ -13,10 +13,12 @@ class ProfileScreen extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverAppBar(
+            automaticallyImplyLeading: false,
             actions: [
               IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Iconsax.more_circle_outline))
+                onPressed: () {},
+                icon: const Icon(Iconsax.more_circle_outline),
+              )
             ],
             clipBehavior: Clip.none,
             pinned: true,

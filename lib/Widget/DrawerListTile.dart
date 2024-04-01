@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class drawerlisttile extends StatelessWidget {
-  const drawerlisttile({super.key, required this.Label, required this.icon});
+  const drawerlisttile({super.key, required this.Label, @required this.icon});
   final IconData? icon;
   final String Label;
 
