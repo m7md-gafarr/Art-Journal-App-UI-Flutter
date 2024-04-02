@@ -101,7 +101,7 @@ class _SingUpPageState extends State<SingUpPage> {
                 height: 30,
               ),
               TextFeildSingInAndUpWidget(
-                icon: Icon(Iconsax.direct_right, color: Bright),
+                icon: Icon(Iconsax.password_check, color: Bright),
                 Label: "PASSWORD",
                 obscureText: _obscureText,
                 suffixIcon: IconButton(
@@ -117,7 +117,7 @@ class _SingUpPageState extends State<SingUpPage> {
                 height: 30,
               ),
               TextFeildSingInAndUpWidget(
-                icon: Icon(Iconsax.direct_right, color: Bright),
+                icon: Icon(Iconsax.password_check, color: Bright),
                 Label: "CONFORM PASSWORD",
                 obscureText: _obscureText,
                 suffixIcon: IconButton(

@@ -98,20 +98,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
-              // Positioned(
-              //   left: 15,
-              //   top: 15,
-              //   child: ElevatedButton(
-              //     onPressed: () {
-              //       scaffoldKey.currentState!.openDrawer();
-              //     },
-              //     child: Icon(Iconsax.menu_1),
-              //     style: ElevatedButton.styleFrom(
-              //         backgroundColor: Bright,
-              //         shape: RoundedRectangleBorder(
-              //             borderRadius: BorderRadius.all(Radius.circular(50)))),
-              //   ),
-              // ),
               if (_onlongclick == true)
                 Container(
                   color: Colors.black.withOpacity(0.5),
@@ -228,7 +214,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         )),
                         context: context,
                         builder: (context) => Container(
-                          height: MediaQuery.of(context).size.width - 170,
+                          height: MediaQuery.of(context).size.width - 100,
                           decoration: const BoxDecoration(
                               borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(30),
@@ -269,7 +255,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   leading: CircleAvatar(
                                     backgroundColor: Dark,
                                   ),
-                                  title: const Text("M2' Sokar"),
+                                  title: const Text("M2' Sokar",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500)),
                                   subtitle: const Text("m7md_gafar"),
                                   trailing: const Icon(Iconsax.tick_circle,
                                       color: Colors.green),
@@ -394,7 +382,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
         ),
       ),
-      drawerEdgeDragWidth: MediaQuery.of(context).size.width,
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width / 5,
       drawerEnableOpenDragGesture: true,
     );
   }

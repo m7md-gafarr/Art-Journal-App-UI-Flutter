@@ -7,9 +7,14 @@ import '../Widget/ButtonWidget.dart';
 import '../Widget/DropDownTextField.dart';
 import '../Widget/TextFeildAddImageWidget.dart';
 
-class AddImage extends StatelessWidget {
+class AddImage extends StatefulWidget {
   const AddImage({super.key});
 
+  @override
+  State<AddImage> createState() => _AddImageState();
+}
+
+class _AddImageState extends State<AddImage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,44 +62,48 @@ class AddImage extends StatelessWidget {
                 ),
               ),
             ),
-            TextFeildAddImageWidget(
+            const TextFeildAddImageWidget(
               labelText: "Title",
               maxLines: 1,
             ),
-            const SizedBox(height: 30),
-            DropDownTextFieldWidget(
+            const SizedBox(height: 15),
+            const DropDownTextFieldWidget(
               labelText: "Medium",
               hintText: "Select Medium",
-              dropDownList: const [
+              dropDownList: [
                 DropDownValueModel(name: "Medium1", value: "Medium1"),
                 DropDownValueModel(name: "Medium2", value: "Medium2"),
                 DropDownValueModel(name: "Medium3", value: "Medium3"),
                 DropDownValueModel(name: "Medium4", value: "Medium4"),
               ],
             ),
-            const SizedBox(height: 30),
-            DropDownTextFieldWidget(
+            const SizedBox(height: 15),
+            const DropDownTextFieldWidget(
               labelText: "Tags",
               hintText: "Select tags",
-              dropDownList: const [
+              dropDownList: [
                 DropDownValueModel(name: "Tag1", value: "Tag1"),
                 DropDownValueModel(name: "Tag2", value: "Tag2"),
                 DropDownValueModel(name: "Tag3", value: "Tag3"),
                 DropDownValueModel(name: "Tag4", value: "Tag4"),
               ],
             ),
-            const SizedBox(height: 30),
-            TextFeildAddImageWidget(
+            const SizedBox(height: 15),
+            const TextFeildAddImageWidget(
               labelText: "Description",
               maxLines: 6,
             ),
             const SizedBox(height: 30),
-            if (MediaQuery.of(Scaffold.of(context).context).viewInsets.bottom !=
-                0)
-              ButtonWidget(
-                label: "Upload",
-                onPressed: () {},
-              ),
+            KeyboardVisibilityBuilder(builder: (context, isKeyboardVisible) {
+              if (isKeyboardVisible == true) {
+                return ButtonWidget(
+                  label: "Upload",
+                  onPressed: () {},
+                );
+              } else {
+                return const Text("");
+              }
+            }),
             const SizedBox(height: 15),
           ],
         ),

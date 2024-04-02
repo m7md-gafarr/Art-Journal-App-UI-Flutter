@@ -12,10 +12,10 @@ class SearchWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       child: Column(
         children: [
-          SizedBox(height: 25),
+          const SizedBox(height: 25),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: TextField(
@@ -24,7 +24,7 @@ class SearchWidget extends StatelessWidget {
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Dark_50.withOpacity(.3),
-                suffixIcon: Icon(Iconsax.search_normal_outline),
+                suffixIcon: const Icon(Iconsax.search_normal_outline),
                 suffixIconColor: Bright,
                 hintText: "Search an media",
                 hintStyle: TextStyle(
@@ -38,7 +38,7 @@ class SearchWidget extends StatelessWidget {
                     color: Dark,
                     width: 1.5,
                   ),
-                  borderRadius: BorderRadius.all(
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(15),
                   ),
                 ),
@@ -47,14 +47,14 @@ class SearchWidget extends StatelessWidget {
                     color: Dark,
                     width: .2,
                   ),
-                  borderRadius: BorderRadius.all(
+                  borderRadius: const BorderRadius.all(
                     Radius.circular(15),
                   ),
                 ),
               ),
             ),
           ),
-          SizedBox(height: 7),
+          const SizedBox(height: 7),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 17.0),
             child: Align(
@@ -70,11 +70,11 @@ class SearchWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 7),
+          const SizedBox(height: 7),
 
           ////////////////
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.0),
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
@@ -90,30 +90,30 @@ class SearchWidget extends StatelessWidget {
             ),
           ),
           //////////////////
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4.0),
             child: GridView.custom(
               shrinkWrap: true,
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               gridDelegate: SliverQuiltedGridDelegate(
                 crossAxisCount: 3,
                 mainAxisSpacing: 4,
                 crossAxisSpacing: 4,
                 repeatPattern: QuiltedGridRepeatPattern.inverted,
                 pattern: [
-                  QuiltedGridTile(1, 1),
-                  QuiltedGridTile(2, 1),
-                  QuiltedGridTile(1, 1),
-                  QuiltedGridTile(1, 1),
-                  QuiltedGridTile(1, 1),
+                  const QuiltedGridTile(1, 1),
+                  const QuiltedGridTile(2, 1),
+                  const QuiltedGridTile(1, 1),
+                  const QuiltedGridTile(1, 1),
+                  const QuiltedGridTile(1, 1),
                 ],
               ),
               childrenDelegate: SliverChildBuilderDelegate(
                 (context, index) => InkWell(
                   onLongPress: () {},
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(
                         Radius.circular(5),
                       ),
@@ -150,13 +150,13 @@ class SearchData extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    return Text("data");
+    return const Text("data");
     throw UnimplementedError();
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return Text("data");
+    return const Text("data");
     throw UnimplementedError();
   }
 }
