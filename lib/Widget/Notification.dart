@@ -3,6 +3,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
+import 'TextBottomSheet.dart';
+
 class NotificationWidget extends StatelessWidget {
   const NotificationWidget(
       {super.key,
@@ -69,7 +71,7 @@ class NotificationWidget extends StatelessWidget {
               ),
               context: context,
               builder: (context) => SizedBox(
-                height: 250,
+                height: 270,
                 child: Column(
                   children: [
                     const SizedBox(height: 5),
@@ -91,12 +93,23 @@ class NotificationWidget extends StatelessWidget {
                     const Spacer(flex: 1),
                     const Text("data"),
                     const Spacer(flex: 1),
-                    menubottom(Iconsax.trash, "Remove this notification"),
-                    const Spacer(flex: 1),
-                    menubottom(Iconsax.slash, "Turn off these notification"),
-                    const Spacer(flex: 1),
-                    menubottom(Iconsax.message_question4,
-                        "Report issue to Notifications Team"),
+                    TextBottomSheetWidget(
+                      text: "Remove this notification",
+                      icon: Iconsax.trash,
+                      color: Dark,
+                    ),
+                    _divider(),
+                    TextBottomSheetWidget(
+                      text: "Turn off these notification",
+                      icon: Iconsax.slash,
+                      color: Dark,
+                    ),
+                    _divider(),
+                    TextBottomSheetWidget(
+                      text: "Report issue to Notifications Team",
+                      icon: Iconsax.message_question4,
+                      color: Dark,
+                    ),
                     const Spacer(flex: 2),
                   ],
                 ),
@@ -109,10 +122,19 @@ class NotificationWidget extends StatelessWidget {
     );
   }
 
+  Widget _divider() {
+    return Divider(
+      indent: 50,
+      endIndent: 50,
+      color: Dark,
+      thickness: .4,
+      height: 40,
+    );
+  }
+
   Widget menubottom(IconData icon, String text) {
     return Row(
       children: [
-        const SizedBox(width: 20),
         Container(
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(
@@ -127,7 +149,7 @@ class NotificationWidget extends StatelessWidget {
         AutoSizeText(
           text,
           style: const TextStyle(
-            fontSize: 17,
+            fontSize: 16,
             fontWeight: FontWeight.w500,
           ),
           maxLines: 1,

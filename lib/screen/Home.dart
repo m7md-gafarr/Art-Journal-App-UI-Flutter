@@ -1,12 +1,13 @@
 import 'dart:ui';
 import 'package:art_journal/Widget/ButtonWidget.dart';
 import 'package:art_journal/const.dart';
-import 'package:art_journal/Widget/GridImageHome.dart';
+import 'package:art_journal/screen/GridImageHome.dart';
 import 'package:art_journal/screen/Profile.dart';
 import 'package:art_journal/screen/SearchWidget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import '../Widget/BottomSheetAddAcount.dart';
 import 'Notification.dart';
 import 'AddImage.dart';
 import '../Widget/DividerDrawer.dart';
@@ -22,7 +23,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   bool _onlongclick = false;
   TabController? _tabController;
-  var scaffoldKey = GlobalKey<ScaffoldState>();
+  // var scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void dispose() {
     _onlongclick = false;
-    _tabController;
+    _tabController!.dispose();
 
     super.dispose();
   }
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
+      // key: scaffoldKey,
       body: SafeArea(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -54,18 +55,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               TabBarView(
                 physics: const NeverScrollableScrollPhysics(),
                 controller: _tabController,
-                children: [
-                  GridImageHome(
-                    onLongPress: () {
-                      setState(() {
-                        _onlongclick = true;
-                      });
-                    },
-                  ),
-                  const NotificationScreen(),
-                  const SearchWidget(),
-                  const AddImage(),
-                  const ProfileScreen(),
+                children: const [
+                  GridImageHome(),
+                  NotificationScreen(),
+                  SearchWidget(),
+                  AddImage(),
+                  ProfileScreen(),
                 ],
               ),
               if (MediaQuery.of(context).viewInsets.bottom == 0)
@@ -207,77 +202,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   InkWell(
                     onTap: () {
                       showModalBottomSheet(
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30),
-                        )),
-                        context: context,
-                        builder: (context) => Container(
-                          height: MediaQuery.of(context).size.width - 100,
-                          decoration: const BoxDecoration(
+                          shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(30),
                             topRight: Radius.circular(30),
                           )),
-                          child: Column(
-                            children: [
-                              const SizedBox(height: 5),
-                              Container(
-                                height: 4,
-                                width: 70,
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(6),
-                                  ),
-                                  color: Dark_50,
-                                ),
-                              ),
-                              const SizedBox(height: 5),
-                              const Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 30.0),
-                                  child: Text(
-                                    "Accounts",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 21,
-                                        fontFamily: "font"),
-                                  ),
-                                ),
-                              ),
-                              const Spacer(flex: 1),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 12.0),
-                                child: ListTile(
-                                  leading: CircleAvatar(
-                                    backgroundColor: Dark,
-                                  ),
-                                  title: const Text("M2' Sokar",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500)),
-                                  subtitle: const Text("m7md_gafar"),
-                                  trailing: const Icon(Iconsax.tick_circle,
-                                      color: Colors.green),
-                                ),
-                              ),
-                              const Spacer(flex: 1),
-                              ButtonWidget(
-                                label: "Create a new account",
-                                onPressed: () {},
-                              ),
-                              const Spacer(flex: 1),
-                              ButtonWidget(
-                                label: "Add an existing account",
-                                onPressed: () {},
-                              ),
-                              const Spacer(flex: 1),
-                            ],
-                          ),
-                        ),
-                      );
+                          context: context,
+                          builder: (context) =>
+                              const BottomSheetAddAcountWidget());
                     },
                     child: const Icon(
                       Iconsax.more_circle,
@@ -382,7 +314,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
         ),
       ),
-      drawerEdgeDragWidth: MediaQuery.of(context).size.width / 5,
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width / 6,
       drawerEnableOpenDragGesture: true,
     );
   }

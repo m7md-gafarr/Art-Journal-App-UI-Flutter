@@ -6,6 +6,7 @@ import 'package:art_journal/screen/Profile.dart';
 import 'package:art_journal/screen/ResetPassword.dart';
 import 'package:art_journal/screen/SingUp.dart';
 import 'package:art_journal/screen/intro.dart';
+import 'package:art_journal/screen/test.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
@@ -33,6 +34,7 @@ class MAIN extends StatelessWidget {
         "home": (context) => const HomePage(),
         "profile": (context) => const ProfileScreen(),
         "ResetPassword": (context) => const ResetPassword(),
+        "test": (context) => const test()
       },
       initialRoute: "intro",
     );
