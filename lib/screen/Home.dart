@@ -1,5 +1,4 @@
 import 'dart:ui';
-import 'package:art_journal/Widget/ButtonWidget.dart';
 import 'package:art_journal/const.dart';
 import 'package:art_journal/screen/GridImageHome.dart';
 import 'package:art_journal/screen/Profile.dart';
@@ -277,6 +276,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Label: "Follower requests", icon: Iconsax.profile_add4),
               const DividerDrawer(),
               ExpansionTile(
+                shape: const Border(),
                 title: const AutoSizeText(
                   "Professional Tools",
                   style: TextStyle(
@@ -292,6 +292,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ],
               ),
               ExpansionTile(
+                shape: const Border(),
                 title: const AutoSizeText(
                   "Settings & Support",
                   style: TextStyle(
@@ -314,7 +315,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ),
         ),
       ),
-      drawerEdgeDragWidth: MediaQuery.of(context).size.width / 6,
+      drawerEdgeDragWidth: MediaQuery.of(context).size.width / 10,
       drawerEnableOpenDragGesture: true,
     );
   }

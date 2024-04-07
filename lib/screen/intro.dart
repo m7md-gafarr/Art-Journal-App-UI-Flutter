@@ -35,7 +35,7 @@ class _introPageState extends State<introPage> {
     ),
   ];
 
-  final _controller = PageController();
+  final _controller = PageController(viewportFraction: 0.99);
 
   bool _lastpage = false;
 

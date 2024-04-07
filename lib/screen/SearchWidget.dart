@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:icons_plus/icons_plus.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../const.dart';
 import '../Widget/QuickSearch.dart';
@@ -24,7 +24,7 @@ class SearchWidget extends StatelessWidget {
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Dark_50.withOpacity(.3),
-                suffixIcon: const Icon(Iconsax.search_normal_outline),
+                suffixIcon: const Icon(Iconsax.search_normal),
                 suffixIconColor: Bright,
                 hintText: "Search an media",
                 hintStyle: TextStyle(
@@ -132,31 +132,5 @@ class SearchWidget extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class SearchData extends SearchDelegate {
-  @override
-  List<Widget>? buildActions(BuildContext context) {
-    return null;
-    throw UnimplementedError();
-  }
-
-  @override
-  Widget? buildLeading(BuildContext context) {
-    return null;
-    throw UnimplementedError();
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    return const Text("data");
-    throw UnimplementedError();
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    return const Text("data");
-    throw UnimplementedError();
   }
 }

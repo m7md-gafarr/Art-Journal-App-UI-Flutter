@@ -1,5 +1,6 @@
 import 'package:art_journal/screen/Home.dart';
 import 'package:art_journal/screen/Login.dart';
+import 'package:art_journal/screen/Message.dart';
 import 'package:art_journal/screen/OTP.dart';
 import 'package:art_journal/screen/PassSingUP.dart';
 import 'package:art_journal/screen/Profile.dart';
@@ -11,10 +12,10 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  // runApp(DevicePreview(
-  //   builder: (context) => const MAIN(),
-  // ));
-  runApp(const MAIN());
+  runApp(DevicePreview(
+    builder: (context) => const MAIN(),
+  ));
+  // runApp(const MAIN());
 }
 
 class MAIN extends StatelessWidget {
@@ -34,7 +35,8 @@ class MAIN extends StatelessWidget {
         "home": (context) => const HomePage(),
         "profile": (context) => const ProfileScreen(),
         "ResetPassword": (context) => const ResetPassword(),
-        "test": (context) => const test()
+        "MessageScreen": (context) => const MessageScreen(),
+        "test": (context) => const test(),
       },
       initialRoute: "intro",
     );

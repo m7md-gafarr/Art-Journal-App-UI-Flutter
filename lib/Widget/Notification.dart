@@ -47,17 +47,33 @@ class NotificationWidget extends StatelessWidget {
         title: Row(
           children: [
             const SizedBox(width: 10),
-            SizedBox(
-              width: MediaQuery.of(context).size.width - 155,
-              child: AutoSizeText(
-                "$Username $action.",
-                style: const TextStyle(
-                  fontSize: 17,
-                  fontWeight: FontWeight.w500,
-                ),
-                maxLines: 1,
+            Text(
+              Username,
+              style: const TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w600,
               ),
+              maxLines: 1,
             ),
+          ],
+        ),
+        subtitle: Row(
+          children: [
+            const SizedBox(width: 10),
+            Text(
+              "$action.",
+              style: const TextStyle(
+                fontSize: 15,
+              ),
+              maxLines: 1,
+            ),
+            const SizedBox(width: 10),
+            const Text(
+              "3d",
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            )
           ],
         ),
         trailing: IconButton(
@@ -93,22 +109,16 @@ class NotificationWidget extends StatelessWidget {
                     const Spacer(flex: 1),
                     const Text("data"),
                     const Spacer(flex: 1),
-                    TextBottomSheetWidget(
+                    const TextBottomSheetWidget(
                       text: "Remove this notification",
                       icon: Iconsax.trash,
-                      color: Dark,
+                      color: Colors.redAccent,
                     ),
                     _divider(),
-                    TextBottomSheetWidget(
+                    const TextBottomSheetWidget(
                       text: "Turn off these notification",
                       icon: Iconsax.slash,
-                      color: Dark,
-                    ),
-                    _divider(),
-                    TextBottomSheetWidget(
-                      text: "Report issue to Notifications Team",
-                      icon: Iconsax.message_question4,
-                      color: Dark,
+                      color: Colors.redAccent,
                     ),
                     const Spacer(flex: 2),
                   ],
@@ -149,7 +159,7 @@ class NotificationWidget extends StatelessWidget {
         AutoSizeText(
           text,
           style: const TextStyle(
-            fontSize: 16,
+            fontSize: 15,
             fontWeight: FontWeight.w500,
           ),
           maxLines: 1,

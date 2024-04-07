@@ -31,6 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen>
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        centerTitle: true,
         title: InkWell(
           onTap: () {
             showModalBottomSheet(
@@ -42,21 +43,23 @@ class _ProfileScreenState extends State<ProfileScreen>
                 context: context,
                 builder: (context) => const BottomSheetAddAcountWidget());
           },
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "M2' Sokar",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 19),
-              ),
-              Icon(
-                Iconsax.arrow_down_1,
-                color: Colors.black,
-              )
-            ],
+          child: const SizedBox(
+            width: 110,
+            child: Row(
+              children: [
+                Text(
+                  "M2' Sokar",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 19),
+                ),
+                Icon(
+                  Iconsax.arrow_down_1,
+                  color: Colors.black,
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -155,25 +158,37 @@ class _ProfileScreenState extends State<ProfileScreen>
           physics: const BouncingScrollPhysics(),
           controller: _tabController,
           children: [
-            ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => const PostWidget(),
-              itemCount: 50,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) => const PostWidget(),
+                itemCount: 50,
+              ),
             ),
-            ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => const PostWidget(),
-              itemCount: 50,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) => const PostWidget(),
+                itemCount: 50,
+              ),
             ),
-            ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => const PostWidget(),
-              itemCount: 50,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) => const PostWidget(),
+                itemCount: 50,
+              ),
             ),
-            ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) => const PostWidget(),
-              itemCount: 50,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) => const PostWidget(),
+                itemCount: 50,
+              ),
             ),
           ],
         ),

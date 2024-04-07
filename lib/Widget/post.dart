@@ -12,6 +12,7 @@ class PostWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 10),
       decoration: BoxDecoration(
+          color: Colors.white,
           border: Border(bottom: BorderSide(color: Dark_50, width: .5))),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,10 +31,13 @@ class PostWidget extends StatelessWidget {
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w600,
-                        fontSize: 17),
+                        fontSize: 16.5),
                   ),
                   const SizedBox(width: 7),
-                  Text("23 Feb", style: TextStyle(color: Dark_50)),
+                  Text(
+                    "23 Feb",
+                    style: TextStyle(color: Dark_50),
+                  ),
                 ],
               ),
               const SizedBox(height: 5),
@@ -54,7 +58,7 @@ class PostWidget extends StatelessWidget {
                       color: Dark_50,
                     ),
                   ),
-                  const SizedBox(width: 20),
+                  const SizedBox(width: 10),
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
@@ -62,7 +66,7 @@ class PostWidget extends StatelessWidget {
                       color: Dark_50,
                     ),
                   ),
-                  const SizedBox(width: 20),
+                  const SizedBox(width: 10),
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
@@ -70,7 +74,7 @@ class PostWidget extends StatelessWidget {
                       color: Dark_50,
                     ),
                   ),
-                  const SizedBox(width: 20),
+                  const SizedBox(width: 10),
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
@@ -78,7 +82,7 @@ class PostWidget extends StatelessWidget {
                       color: Dark_50,
                     ),
                   ),
-                  const SizedBox(width: 20),
+                  const SizedBox(width: 10),
                   IconButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -89,7 +93,7 @@ class PostWidget extends StatelessWidget {
                           )),
                           context: context,
                           builder: (context) => Container(
-                                height: MediaQuery.of(context).size.width - 100,
+                                height: MediaQuery.of(context).size.width - 50,
                                 decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                   topLeft: Radius.circular(30),

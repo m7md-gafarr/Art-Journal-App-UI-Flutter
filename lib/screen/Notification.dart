@@ -33,16 +33,10 @@ class NotificationScreen extends StatelessWidget {
             action: "followed you",
           ),
           NotificationWidget(
-            icon: Iconsax.gallery_favorite,
-            color: Colors.redAccent,
+            icon: Iconsax.repeat,
+            color: Colors.lightGreen,
             Username: "m7md_gafar",
-            action: "like your post",
-          ),
-          NotificationWidget(
-            icon: Iconsax.user_add,
-            color: Colors.blueAccent,
-            Username: "m7md_gafar",
-            action: "followed you",
+            action: "Repeat your post",
           ),
           NotificationWidget(
             icon: Iconsax.gallery_favorite,
@@ -57,16 +51,10 @@ class NotificationScreen extends StatelessWidget {
             action: "followed you",
           ),
           NotificationWidget(
-            icon: Iconsax.gallery_favorite,
-            color: Colors.redAccent,
+            icon: Iconsax.repeat,
+            color: Colors.lightGreen,
             Username: "m7md_gafar",
-            action: "like your post",
-          ),
-          NotificationWidget(
-            icon: Iconsax.user_add,
-            color: Colors.blueAccent,
-            Username: "m7md_gafar",
-            action: "followed you",
+            action: "Repeat your post",
           ),
           NotificationWidget(
             icon: Iconsax.gallery_favorite,
@@ -79,6 +67,48 @@ class NotificationScreen extends StatelessWidget {
             color: Colors.blueAccent,
             Username: "m7md_gafar",
             action: "followed you",
+          ),
+          NotificationWidget(
+            icon: Iconsax.repeat,
+            color: Colors.lightGreen,
+            Username: "m7md_gafar",
+            action: "Repeat your post",
+          ),
+          NotificationWidget(
+            icon: Iconsax.gallery_favorite,
+            color: Colors.redAccent,
+            Username: "m7md_gafar",
+            action: "like your post",
+          ),
+          NotificationWidget(
+            icon: Iconsax.user_add,
+            color: Colors.blueAccent,
+            Username: "m7md_gafar",
+            action: "followed you",
+          ),
+          NotificationWidget(
+            icon: Iconsax.repeat,
+            color: Colors.lightGreen,
+            Username: "m7md_gafar",
+            action: "Repeat your post",
+          ),
+          NotificationWidget(
+            icon: Iconsax.gallery_favorite,
+            color: Colors.redAccent,
+            Username: "m7md_gafar",
+            action: "like your post",
+          ),
+          NotificationWidget(
+            icon: Iconsax.user_add,
+            color: Colors.blueAccent,
+            Username: "m7md_gafar",
+            action: "followed you",
+          ),
+          NotificationWidget(
+            icon: Iconsax.repeat,
+            color: Colors.lightGreen,
+            Username: "m7md_gafar",
+            action: "Repeat your post",
           ),
           NotificationWidget(
             icon: Iconsax.gallery_favorite,
