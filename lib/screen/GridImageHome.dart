@@ -23,17 +23,22 @@ class GridImageHome extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
-                    onTap: () {
-                      Scaffold.of(context).openDrawer();
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: CircleAvatar(
-                        maxRadius: 15,
-                        backgroundColor: Dark,
-                        child: const Text("M"),
-                      ),
-                    )),
+                  onTap: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: CircleAvatar(
+                      maxRadius: 15,
+                      backgroundColor: Colors.transparent,
+                      child: Image.asset("assets/images/user.png"),
+                    ),
+                  ),
+                ),
+                Image.asset(
+                  "assets/Logos/Intersect.png",
+                  height: 37,
+                ),
                 IconButton(
                     onPressed: () {
                       Navigator.pushNamed(context, "MessageScreen");

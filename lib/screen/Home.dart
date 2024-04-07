@@ -22,7 +22,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   bool _onlongclick = false;
   TabController? _tabController;
-  // var scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -45,7 +44,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // key: scaffoldKey,
       body: SafeArea(
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -56,9 +54,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 controller: _tabController,
                 children: const [
                   GridImageHome(),
-                  NotificationScreen(),
                   SearchWidget(),
                   AddImage(),
+                  NotificationScreen(),
                   ProfileScreen(),
                 ],
               ),
@@ -84,9 +82,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       controller: _tabController,
                       tabs: const [
                         Tab(child: Icon(Iconsax.home, size: 25)),
-                        Tab(child: Icon(Iconsax.notification4, size: 25)),
                         Tab(child: Icon(Iconsax.search_normal, size: 25)),
                         Tab(child: Icon(Iconsax.gallery_add, size: 25)),
+                        Tab(child: Icon(Iconsax.notification4, size: 25)),
                         Tab(child: Icon(Iconsax.user, size: 25)),
                       ],
                     ),
@@ -221,8 +219,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   color: Bright,
                 ),
                 currentAccountPicture: CircleAvatar(
-                  backgroundColor: Dark,
-                  child: const Text("M"),
+                  backgroundColor: Colors.transparent,
+                  child: Image.asset("assets/images/user.png"),
                 ),
                 margin: const EdgeInsets.all(10),
                 currentAccountPictureSize: const Size(60, 60),

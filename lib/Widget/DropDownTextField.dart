@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import '../const.dart';
 
 class DropDownTextFieldWidget extends StatelessWidget {
-  const DropDownTextFieldWidget(
-      {super.key,
-      required this.dropDownList,
-      required this.hintText,
-      required this.labelText});
-  final String labelText, hintText;
+  const DropDownTextFieldWidget({
+    super.key,
+    required this.dropDownList,
+    required this.hintText,
+  });
+  final String hintText;
 
   final List<DropDownValueModel> dropDownList;
   @override
@@ -18,29 +18,24 @@ class DropDownTextFieldWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: DropDownTextField(
         textFieldDecoration: InputDecoration(
-          labelText: labelText,
+          filled: true,
+          fillColor: Dark_50.withOpacity(.3),
           hintText: hintText,
-          labelStyle: TextStyle(
+          hintStyle: TextStyle(
             color: Dark,
             fontWeight: FontWeight.w600,
             fontSize: 17,
             fontFamily: "font",
           ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Dark,
-              width: 1.5,
-            ),
-            borderRadius: const BorderRadius.all(
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.all(
               Radius.circular(10),
             ),
           ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Dark,
-              width: 1.5,
-            ),
-            borderRadius: const BorderRadius.all(
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.all(
               Radius.circular(10),
             ),
           ),

@@ -3,7 +3,6 @@ import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../Widget/ButtonWidget.dart';
 import '../Widget/DropDownTextField.dart';
 import '../Widget/TextFeildAddImageWidget.dart';
 
@@ -15,98 +14,183 @@ class AddImage extends StatefulWidget {
 }
 
 class _AddImageState extends State<AddImage> {
+  bool _switch = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Column(
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 25),
-              child: Container(
-                width: double.maxFinite,
-                height: 200,
-                decoration: BoxDecoration(
-                    color: Dark_50.withOpacity(.3),
-                    borderRadius: const BorderRadius.all(Radius.circular(8))),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
-                        color: Bright,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(50)),
-                      ),
-                      child: const Icon(
-                        Iconsax.image4,
-                        color: Colors.white,
-                      ),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        actions: [
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Chanel",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: "font",
+                      fontWeight: FontWeight.w600,
+                      color: Colors.red,
                     ),
-                    const SizedBox(
-                      height: 5,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Post",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: "font",
+                      fontWeight: FontWeight.w600,
+                      color: Colors.green,
                     ),
-                    Text(
-                      "Tap to upload",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontFamily: "font",
-                        color: Dark,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+      body: Container(
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15.0, vertical: 25),
+                child: Container(
+                  width: double.maxFinite,
+                  height: 200,
+                  decoration: BoxDecoration(
+                      color: Dark_50.withOpacity(.3),
+                      borderRadius: const BorderRadius.all(Radius.circular(8))),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 60,
+                        width: 60,
+                        decoration: BoxDecoration(
+                          color: Bright,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(50)),
+                        ),
+                        child: const Icon(
+                          Iconsax.image4,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Tap to upload",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontFamily: "font",
+                          color: Dark,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const TextFeildAddImageWidget(
-              labelText: "Title",
-              maxLines: 1,
-            ),
-            const SizedBox(height: 15),
-            const DropDownTextFieldWidget(
-              labelText: "Medium",
-              hintText: "Select Medium",
-              dropDownList: [
-                DropDownValueModel(name: "Medium1", value: "Medium1"),
-                DropDownValueModel(name: "Medium2", value: "Medium2"),
-                DropDownValueModel(name: "Medium3", value: "Medium3"),
-                DropDownValueModel(name: "Medium4", value: "Medium4"),
-              ],
-            ),
-            const SizedBox(height: 15),
-            const DropDownTextFieldWidget(
-              labelText: "Tags",
-              hintText: "Select tags",
-              dropDownList: [
-                DropDownValueModel(name: "Tag1", value: "Tag1"),
-                DropDownValueModel(name: "Tag2", value: "Tag2"),
-                DropDownValueModel(name: "Tag3", value: "Tag3"),
-                DropDownValueModel(name: "Tag4", value: "Tag4"),
-              ],
-            ),
-            const SizedBox(height: 15),
-            const TextFeildAddImageWidget(
-              labelText: "Description",
-              maxLines: 6,
-            ),
-            const SizedBox(height: 30),
-            KeyboardVisibilityBuilder(builder: (context, isKeyboardVisible) {
-              if (isKeyboardVisible == true) {
-                return ButtonWidget(
-                  label: "Upload",
-                  onPressed: () {},
-                );
-              } else {
-                return const Text("");
-              }
-            }),
-            const SizedBox(height: 15),
-          ],
+              const DropDownTextFieldWidget(
+                hintText: "Select Medium",
+                dropDownList: [
+                  DropDownValueModel(
+                      name: "Pencil and Charcoal Drawing", value: "Medium1"),
+                  DropDownValueModel(name: "Watercolors", value: "Medium2"),
+                  DropDownValueModel(
+                      name: "Acrylic or Oil Painting", value: "Medium3"),
+                  DropDownValueModel(name: "Collage", value: "Medium4"),
+                  DropDownValueModel(
+                      name: "Paper Sculpture or Folding", value: "Medium1"),
+                  DropDownValueModel(
+                      name: "Arabic Calligraphy and Handwriting",
+                      value: "Medium2"),
+                  DropDownValueModel(
+                      name: "Dry Media Drawing", value: "Medium3"),
+                  DropDownValueModel(name: "Photography", value: "Medium4"),
+                  DropDownValueModel(
+                      name: "Experimentation and Mixing Techniques",
+                      value: "Medium4"),
+                  DropDownValueModel(
+                      name: "Ornamentation and Decorations", value: "Medium4"),
+                ],
+              ),
+              const SizedBox(height: 15),
+              const TextFeildAddImageWidget(
+                hintText: "Write Description...",
+                maxLines: 6,
+              ),
+              const SizedBox(height: 30),
+
+              // KeyboardVisibilityBuilder(
+              //   builder: (context, isKeyboardVisible) {
+              //     if (isKeyboardVisible == true) {
+              //       return ButtonWidget(
+              //         label: "Post",
+              //         onPressed: () {},
+              //       );
+              //     } else {
+              //       return const Text("");
+              //     }
+              //   },
+              // ),
+              SwitchButton(
+                text: "Comment",
+                value: _switch,
+                fun: (p0) {
+                  setState(() {
+                    _switch = !_switch;
+                  });
+                },
+              ),
+              const SizedBox(height: 15),
+              SwitchButton(
+                text: "Repost",
+                value: false,
+                fun: (p0) {},
+              ),
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget SwitchButton(
+      {required String text,
+      required bool value,
+      required void Function(bool)? fun}) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            text,
+            style: TextStyle(
+              color: Dark,
+              fontWeight: FontWeight.w600,
+              fontSize: 17,
+              fontFamily: "font",
+            ),
+          ),
+          Switch(
+            value: value,
+            onChanged: fun,
+            activeColor: Colors.green,
+          )
+        ],
       ),
     );
   }

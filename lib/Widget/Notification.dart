@@ -24,7 +24,8 @@ class NotificationWidget extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             CircleAvatar(
-              backgroundColor: Dark,
+              backgroundColor: Colors.transparent,
+              child: Image.asset("assets/images/user.png"),
             ),
             Positioned(
               bottom: -8,

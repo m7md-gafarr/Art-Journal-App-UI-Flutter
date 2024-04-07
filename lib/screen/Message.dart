@@ -26,8 +26,8 @@ class MessageScreen extends StatelessWidget {
                 hintText: "Search Messages",
                 hintStyle: TextStyle(
                   color: Dark,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
                   fontFamily: "font",
                 ),
                 focusedBorder: OutlineInputBorder(
@@ -76,7 +76,30 @@ class MessageScreen extends StatelessWidget {
         itemBuilder: (context, index) => ListTile(
           contentPadding: const EdgeInsets.all(8),
           onTap: () {},
-          leading: CircleAvatar(backgroundColor: Dark, maxRadius: 25),
+          leading: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              CircleAvatar(
+                backgroundColor: Colors.transparent,
+                maxRadius: 25,
+                child: Image.asset("assets/images/user.png"),
+              ),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Container(
+                  height: 13,
+                  width: 13,
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                      color: Colors.lightGreenAccent,
+                      border: Border.all(width: 1, color: Colors.white)),
+                ),
+              )
+            ],
+          ),
           title: const Text(
             "M2' Sokar",
             style: TextStyle(

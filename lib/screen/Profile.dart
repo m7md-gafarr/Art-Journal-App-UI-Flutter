@@ -72,9 +72,9 @@ class _ProfileScreenState extends State<ProfileScreen>
               children: [
                 const SizedBox(height: 10),
                 CircleAvatar(
-                  backgroundColor: Dark,
                   maxRadius: 45,
-                  child: const Text("M"),
+                  backgroundColor: Colors.transparent,
+                  child: Image.asset("assets/images/user.png"),
                 ),
                 const SizedBox(height: 10),
                 Text(

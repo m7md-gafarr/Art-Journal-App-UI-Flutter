@@ -8,14 +8,13 @@ import 'package:art_journal/screen/ResetPassword.dart';
 import 'package:art_journal/screen/SingUp.dart';
 import 'package:art_journal/screen/intro.dart';
 import 'package:art_journal/screen/test.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(DevicePreview(
-    builder: (context) => const MAIN(),
-  ));
-  // runApp(const MAIN());
+  // runApp(DevicePreview(
+  //   builder: (context) => const MAIN(),
+  // ));
+  runApp(const MAIN());
 }
 
 class MAIN extends StatelessWidget {
@@ -24,7 +23,7 @@ class MAIN extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      builder: DevicePreview.appBuilder,
+      // builder: DevicePreview.appBuilder,
       debugShowCheckedModeBanner: false,
       routes: {
         "login": (context) => const LoginPage(),

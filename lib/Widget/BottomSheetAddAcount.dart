@@ -48,7 +48,8 @@ class BottomSheetAddAcountWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: ListTile(
               leading: CircleAvatar(
-                backgroundColor: Dark,
+                backgroundColor: Colors.transparent,
+                child: Image.asset("assets/images/user.png"),
               ),
               title: const Text("M2' Sokar",
                   style: TextStyle(fontWeight: FontWeight.w500)),

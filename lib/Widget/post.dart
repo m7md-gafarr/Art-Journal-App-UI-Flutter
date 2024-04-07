@@ -18,7 +18,8 @@ class PostWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CircleAvatar(
-            backgroundColor: Dark,
+            backgroundColor: Colors.transparent,
+            child: Image.asset("assets/images/user.png"),
           ),
           const SizedBox(width: 10),
           Column(
@@ -40,6 +41,8 @@ class PostWidget extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 5),
+              const Text("♥️"),
               const SizedBox(height: 5),
               ConstrainedBox(
                 constraints: BoxConstraints(
