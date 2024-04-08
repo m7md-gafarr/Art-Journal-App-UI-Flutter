@@ -62,7 +62,7 @@ class _PassWordSingUpPageState extends State<PassWordSingUpPage> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "Create New Password.",
+                    "Create New Password",
                     style: TextStyle(
                       color: Dark_50,
                       fontFamily: "font1",

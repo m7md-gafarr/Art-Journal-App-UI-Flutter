@@ -1,5 +1,6 @@
 import 'package:art_journal/Widget/post.dart';
 import 'package:art_journal/const.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -101,6 +102,9 @@ class _ProfileScreenState extends State<ProfileScreen>
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Edit_Share_Button(
+                      onPressed: () {
+                        Navigator.pushNamed(context, "EditProfileScreen");
+                      },
                       widget: const Text(
                         "Edit profile",
                         style: TextStyle(
@@ -110,6 +114,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                     ),
                     const SizedBox(width: 7),
                     Edit_Share_Button(
+                      onPressed: () {},
                       widget: const Text(
                         "Share profile",
                         style: TextStyle(
@@ -119,6 +124,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                     ),
                     const SizedBox(width: 7),
                     Edit_Share_Button(
+                      onPressed: () {},
                       widget: const Icon(
                         Iconsax.user_add,
                         color: Colors.white,
@@ -128,13 +134,13 @@ class _ProfileScreenState extends State<ProfileScreen>
                   ],
                 ),
                 const SizedBox(height: 10),
-                Container(
-                  padding: const EdgeInsets.all(3),
-                  decoration: BoxDecoration(
-                      color: Bright,
-                      borderRadius: const BorderRadius.all(Radius.circular(3))),
-                  child: const Text("+Add bio",
-                      style: TextStyle(fontSize: 12, color: Colors.white)),
+                AutoSizeText(
+                  "Software Engineer || Mobile App Developer",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Dark,
+                  ),
+                  maxLines: 1,
                 ),
                 const SizedBox(height: 10),
                 TabBar(
@@ -233,9 +239,10 @@ class _ProfileScreenState extends State<ProfileScreen>
 
   Widget Edit_Share_Button({
     required Widget widget,
+    required void Function()? onPressed,
   }) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: Bright,
         padding: const EdgeInsets.all(8),

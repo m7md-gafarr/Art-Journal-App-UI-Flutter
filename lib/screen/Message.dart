@@ -66,12 +66,13 @@ class MessageScreen extends StatelessWidget {
             Navigator.pop(context);
           },
           icon: Icon(
-            Iconsax.back_square,
+            Icons.arrow_back,
             color: Dark,
           ),
         ),
       ),
       body: ListView.builder(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => ListTile(
           contentPadding: const EdgeInsets.all(8),

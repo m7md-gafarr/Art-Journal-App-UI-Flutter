@@ -77,7 +77,7 @@ class _SingUpPageState extends State<SingUpPage> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "SING UP....",
+                    "SING UP",
                     style: TextStyle(
                       color: Dark_50,
                       fontFamily: "font1",

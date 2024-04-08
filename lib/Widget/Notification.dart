@@ -105,10 +105,11 @@ class NotificationWidget extends StatelessWidget {
                     const Spacer(flex: 1),
                     CircleAvatar(
                       maxRadius: 30,
-                      backgroundColor: Dark,
+                      backgroundColor: Colors.transparent,
+                      child: Image.asset("assets/images/user.png"),
                     ),
                     const Spacer(flex: 1),
-                    const Text("data"),
+                    const Text("like your post."),
                     const Spacer(flex: 1),
                     const TextBottomSheetWidget(
                       text: "Remove this notification",

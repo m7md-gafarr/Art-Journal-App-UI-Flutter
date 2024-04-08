@@ -48,7 +48,7 @@ class OTPSingUpPage extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "OTP CODE..",
+                    "OTP CODE",
                     style: TextStyle(
                       color: Dark_50,
                       fontFamily: "font1",

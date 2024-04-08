@@ -56,7 +56,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: AutoSizeText(
-                    "Reset your Password...",
+                    "Reset your Password",
                     maxLines: 1,
                     style: TextStyle(
                       color: Dark_50,

@@ -25,33 +25,36 @@ class _AddImageState extends State<AddImage> {
         actions: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Iconsax.close_square,
+                      color: Bright,
+                      size: 25,
+                    )),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    "Chanel",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: "font",
-                      fontWeight: FontWeight.w600,
-                      color: Colors.red,
+                  padding: const EdgeInsets.only(right: 10.0),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Bright,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(30)))),
+                    child: const Text(
+                      "Post",
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontFamily: "font",
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    "Post",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: "font",
-                      fontWeight: FontWeight.w600,
-                      color: Colors.green,
-                    ),
-                  ),
-                )
               ],
             ),
           ),

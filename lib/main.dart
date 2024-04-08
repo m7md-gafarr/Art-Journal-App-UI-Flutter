@@ -1,3 +1,4 @@
+import 'package:art_journal/screen/EditProfile.dart';
 import 'package:art_journal/screen/Home.dart';
 import 'package:art_journal/screen/Login.dart';
 import 'package:art_journal/screen/Message.dart';
@@ -6,6 +7,7 @@ import 'package:art_journal/screen/PassSingUP.dart';
 import 'package:art_journal/screen/Profile.dart';
 import 'package:art_journal/screen/ResetPassword.dart';
 import 'package:art_journal/screen/SingUp.dart';
+import 'package:art_journal/screen/SubPost.dart';
 import 'package:art_journal/screen/intro.dart';
 import 'package:art_journal/screen/test.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +37,8 @@ class MAIN extends StatelessWidget {
         "profile": (context) => const ProfileScreen(),
         "ResetPassword": (context) => const ResetPassword(),
         "MessageScreen": (context) => const MessageScreen(),
+        "EditProfileScreen": (context) => const EditProfileScreen(),
+        "SubPostScreen": (context) => const SubPostScreen(),
         "test": (context) => const test(),
       },
       initialRoute: "intro",

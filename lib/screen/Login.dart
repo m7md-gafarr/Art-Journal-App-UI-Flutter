@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    "SING IN....",
+                    "SING IN",
                     style: TextStyle(
                       color: Dark_50,
                       fontFamily: "font1",

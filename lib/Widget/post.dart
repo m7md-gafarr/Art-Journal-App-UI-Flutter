@@ -19,7 +19,10 @@ class PostWidget extends StatelessWidget {
         children: [
           CircleAvatar(
             backgroundColor: Colors.transparent,
-            child: Image.asset("assets/images/user.png"),
+            child: Hero(
+              tag: "imageid",
+              child: Image.asset("assets/images/user.png"),
+            ),
           ),
           const SizedBox(width: 10),
           Column(
@@ -49,7 +52,12 @@ class PostWidget extends StatelessWidget {
                     maxWidth: MediaQuery.of(context).size.width - 70),
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  child: Image.asset("assets/images/photo2.jpg"),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "SubPostScreen");
+                    },
+                    child: Image.asset("assets/images/photo2.jpg"),
+                  ),
                 ),
               ),
               Row(
