@@ -54,11 +54,19 @@ class MessageScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.more_vert,
-                color: Dark,
-              ))
+            onPressed: () {},
+            icon: Icon(
+              Iconsax.filter_search,
+              color: Dark,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.more_vert,
+              color: Dark,
+            ),
+          ),
         ],
         backgroundColor: Colors.white,
         leading: IconButton(

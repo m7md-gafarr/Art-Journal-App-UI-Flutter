@@ -42,9 +42,9 @@ dependencies:
 
 flutter_native_splash:
   color: "#FF004D"
-  image: assets/Logos/Logo.png
+  image: assets/Logos/LogoSplashScreen.png
   android_12:
-    image: assets/Logos/Logo.png
+    image: assets/Logos/LogoSplashScreen.png
     color: "#FF004D"
    
 

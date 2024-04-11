@@ -29,6 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -36,13 +37,14 @@ class _ProfileScreenState extends State<ProfileScreen>
         title: InkWell(
           onTap: () {
             showModalBottomSheet(
-                shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
-                )),
-                context: context,
-                builder: (context) => const BottomSheetAddAcountWidget());
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              )),
+              context: context,
+              builder: (context) => const BottomSheetAddAcountWidget(),
+            );
           },
           child: const SizedBox(
             width: 110,
@@ -53,7 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: 19),
+                      fontSize: 18),
                 ),
                 Icon(
                   Iconsax.arrow_down_1,
@@ -90,11 +92,11 @@ class _ProfileScreenState extends State<ProfileScreen>
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    following_ers_likes(num: 125, text: "Following"),
+                    following_ers_likes(num: "125", text: "Following"),
                     VerticalDivider_Widget(),
-                    following_ers_likes(num: 3540, text: "Followers"),
+                    following_ers_likes(num: "3540", text: "Followers"),
                     VerticalDivider_Widget(),
-                    following_ers_likes(num: 41, text: "Likes"),
+                    following_ers_likes(num: "41.8K", text: "Likes"),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -202,11 +204,11 @@ class _ProfileScreenState extends State<ProfileScreen>
     );
   }
 
-  Widget following_ers_likes({required String text, required int num}) {
+  Widget following_ers_likes({required String text, required String num}) {
     return Column(
       children: [
         Text(
-          "$num",
+          num,
           style: const TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.w700,

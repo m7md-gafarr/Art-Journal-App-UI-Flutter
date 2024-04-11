@@ -19,10 +19,7 @@ class PostWidget extends StatelessWidget {
         children: [
           CircleAvatar(
             backgroundColor: Colors.transparent,
-            child: Hero(
-              tag: "imageid",
-              child: Image.asset("assets/images/user.png"),
-            ),
+            child: Image.asset("assets/images/user.png"),
           ),
           const SizedBox(width: 10),
           Column(
@@ -56,7 +53,9 @@ class PostWidget extends StatelessWidget {
                     onTap: () {
                       Navigator.pushNamed(context, "SubPostScreen");
                     },
-                    child: Image.asset("assets/images/photo2.jpg"),
+                    child: Hero(
+                        tag: "imageid",
+                        child: Image.asset("assets/images/photo2.jpg")),
                   ),
                 ),
               ),

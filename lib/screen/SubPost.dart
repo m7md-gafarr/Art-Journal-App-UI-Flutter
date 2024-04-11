@@ -13,14 +13,37 @@ class SubPostScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
+          // IconButton(
+          //   onPressed: () {
+          //     Navigator.pop(context);
+          //   },
+          //   icon: Icon(
+          //     Icons.more_vert,
+          //     color: Dark,
+          //   ),
+          // ),
+          PopupMenuButton(
             icon: Icon(
               Icons.more_vert,
               color: Dark,
             ),
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                child: const Text("Save"),
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      backgroundColor: Colors.green,
+                      shape: StadiumBorder(),
+                      behavior: SnackBarBehavior.floating,
+                      width: 150,
+                      elevation: 3,
+                      content: Center(child: Text("Photo saved.")),
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ],
         backgroundColor: Colors.white,
@@ -98,8 +121,12 @@ class SubPostScreen extends StatelessWidget {
           ),
           Hero(
             tag: "imageid",
-            child: Image.asset(
-              "assets/images/photo2.jpg",
+            child: InteractiveViewer(
+              minScale: 0.1,
+              maxScale: 2.5,
+              child: Image.asset(
+                "assets/images/photo2.jpg",
+              ),
             ),
           ),
           Padding(
@@ -132,7 +159,7 @@ class SubPostScreen extends StatelessWidget {
                     color: Dark_50,
                   ),
                 ),
-                Text("45K", style: TextStyle(color: Dark)),
+                Text("7K", style: TextStyle(color: Dark)),
                 const SizedBox(width: 10),
                 IconButton(
                   onPressed: () {},
