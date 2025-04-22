@@ -1,16 +1,17 @@
-# art_journal
+# 🎨 Art Journal App UI – Flutter
 
-A new Flutter project.
+This is a beautifully crafted Flutter UI for an art journal / social app concept.  
+It includes all the essential screens you'd expect in a modern creative sharing platform — perfect for designers, developers, and prototyping.
 
-## Getting Started
+## 📱 Screens Included:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- 🚀 Splash Screen  
+- 📖 Onboarding  
+- 🏠 Homepage / Feed  
+- 🖼️ Posts Page (showing shared artworks/posts)  
+- 🔍 Search Screen  
+- ⬆️ Upload Post Screen  
+- 🔔 Notifications Screen  
+- 👤 Profile Screen  
+- ✏️ Edit User Info Screen  
+- 🔐 Login / Registration / Forgot Password / OTP
